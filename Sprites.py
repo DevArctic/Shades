@@ -2,7 +2,6 @@ from pyglet.gl import *
 import OpenGL
 import math
 import Tracks
-import Movement
 
 class Circle():
 	def __init__(self):

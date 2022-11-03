@@ -125,7 +125,10 @@ class PolygonParent(Shade):
 		self.drawShades(ctx,MODE)
 		self.drawSprites(ctx,MODE)
 
-
+class HexTile(Shade):
+	def __init__(self, parent):
+		 self.parent=parent
+	
 
 		
 class Follower(Shade):

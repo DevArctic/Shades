@@ -5,6 +5,7 @@ import Tracks
 import Sprites
 from pyglet.gl import *
 import CairoPIL
+import HexGrid
 
 NFRAMES = 240
 #MODE 0 PYCAIRO
@@ -20,26 +21,10 @@ WHITE = (1,1,1)
 
 tick = 0
 
-walker = Shades.Shade()
-walker.addTrack(Tracks.rainbowWalk(NFRAMES))
-walker.setStart()
 
-s1 = Shades.Shade()
-
-s1.setPos((400,400))
-s1.setSize(200)
-s1.setColor(walker.getPos())
-
-s1.addSprites([Sprites.Expander() for x in range (NFRAMES)])
 
 def runSim(ctx):
 	global tick
-	s1.sprites[tick].setColor()
-	for each in s1.sprites[:(tick+1)]:
-		each.draw(ctx,MODE)
-		each.increment(5)
-	walker.moveOnTrack()
-	s1.setColor(walker.getPos())
 
 	
 	tick = tick + 1
